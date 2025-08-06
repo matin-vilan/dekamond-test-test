@@ -1,0 +1,82 @@
+@import "@/shared/theme/colors";
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+// Small variant
+.sm {
+  @extend .container;
+  max-width: 640px; // 40rem
+
+  @media (max-width: 640px) {
+    padding: 0 0.75rem;
+  }
+}
+
+// Medium variant
+.md {
+  @extend .container;
+  max-width: 768px; // 48rem
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+// Large variant
+.lg {
+  @extend .container;
+  max-width: 1024px; // 64rem
+
+  @media (max-width: 1024px) {
+    padding: 0 1.5rem;
+  }
+}
+
+// Extra large variant (bonus)
+.xl {
+  @extend .container;
+  max-width: 1280px; // 80rem
+
+  @media (max-width: 1280px) {
+    padding: 0 2rem;
+  }
+}
+
+// Full width variant
+.full {
+  @extend .container;
+  max-width: none;
+  padding: 0 1rem;
+}
+
+// Container with background
+.withBackground {
+  background-color: colors("white");
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(colors("black"), 0.1);
+  padding: 1.5rem;
+}
+
+// Container with border
+.withBorder {
+  border: 1px solid colors("border");
+  border-radius: 8px;
+  background-color: colors("white");
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .withBackground,
+  .withBorder {
+    padding: 1rem;
+  }
+}

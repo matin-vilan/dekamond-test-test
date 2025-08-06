@@ -1,0 +1,55 @@
+@import "@/shared/theme/colors";
+
+.text {
+  font-family: inherit;
+  font-size: 1rem;
+  color: colors("gray-900");
+  line-height: 1.5;
+  margin: 0;
+
+  // Color modifiers
+  &--primary {
+    color: colors("primary-500");
+  }
+  &--secondary {
+    color: colors("secondary");
+  }
+  &--success {
+    color: colors("success-500");
+  }
+  &--danger {
+    color: colors("error-500");
+  }
+  &--warning {
+    color: colors("warning-500");
+  }
+  &--info {
+    color: colors("info-500");
+  }
+  &--gray-900 {
+    color: colors("gray-900");
+  }
+  &--gray-600 {
+    color: colors("gray-600");
+  }
+  &--white {
+    color: colors("white");
+  }
+  &--black {
+    color: colors("black");
+  }
+}
+
+.text--title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: colors("primary");
+  line-height: 1.2;
+}
+
+.text--description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: colors("gray-600");
+  line-height: 1.6;
+}

@@ -1,0 +1,121 @@
+@import "@/shared/theme/colors";
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: colors("text");
+  background-color: colors("white");
+  border: 2px solid colors("border");
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: colors("gray-400");
+    font-style: italic;
+  }
+
+  &:hover {
+    border-color: colors("border-hover");
+  }
+
+  &:focus {
+    border-color: colors("primary-500");
+    box-shadow: 0 0 0 3px rgba(colors("primary-500"), 0.1);
+  }
+
+  &:disabled {
+    background-color: colors("disabled");
+    color: colors("gray-600");
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.error {
+    border-color: colors("error-500");
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(colors("error-500"), 0.1);
+    }
+  }
+
+  &.success {
+    border-color: colors("success-500");
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(colors("success-500"), 0.1);
+    }
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: colors("gray-400");
+  cursor: pointer;
+}
+
+.required {
+  color: colors("error-500");
+  margin-left: 2px;
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWithIcon {
+  padding-left: 44px;
+}
+
+.icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: colors("gray-500");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.errorMessage {
+  margin-top: 4px;
+  font-size: 12px;
+  color: colors("error-500");
+}
+
+.helperText {
+  margin-top: 4px;
+  font-size: 12px;
+  color: colors("gray-500");
+}
+
+// Size variants
+.small {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.large {
+  padding: 16px 20px;
+  font-size: 18px;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .input {
+    font-size: 16px; // Prevents zoom on iOS
+  }
+}

@@ -1,0 +1,63 @@
+@import "@/shared/theme/colors";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  min-height: 2.5rem;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &:focus {
+    outline: 2px solid colors("primary-500");
+    outline-offset: 2px;
+  }
+}
+
+.primary {
+  @extend .button;
+  background-color: colors("primary-500");
+  color: colors("white");
+
+  &:hover:not(:disabled) {
+    background-color: colors("primary-600");
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(colors("primary-500"), 0.3);
+  }
+
+  &:active:not(:disabled) {
+    background-color: colors("primary-700");
+    transform: translateY(0);
+  }
+}
+
+.secondary {
+  @extend .button;
+  background-color: transparent;
+  color: colors("gray-700");
+  border: 1px solid colors("gray-300");
+
+  &:hover:not(:disabled) {
+    background-color: colors("secondary");
+    border-color: colors("gray-400");
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(colors("black"), 0.1);
+  }
+
+  &:active:not(:disabled) {
+    background-color: colors("gray-100");
+    transform: translateY(0);
+  }
+}
