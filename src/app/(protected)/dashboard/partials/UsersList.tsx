@@ -7,6 +7,7 @@ import classes from "./UsersList.module.scss";
 import Container from "@/shared/components/UI/Container";
 import Button from "@/shared/components/UI/Button";
 import { useAuth } from "@/shared/hooks/useAuth";
+import Image from "next/image";
 
 const UsersList = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -41,10 +42,12 @@ const UsersList = () => {
         ) : (
           users.map((user) => (
             <div className={classes.userItem} key={user.login.uuid}>
-              <img
+              <Image
                 className={classes.userAvatar}
                 src={user.picture.thumbnail}
                 alt={`${user.name.first} ${user.name.last}`}
+                width={48}
+                height={48}
               />
               <div className={classes.userInfo}>
                 <Text className={classes.userName}>
